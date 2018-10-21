@@ -9,10 +9,10 @@ export class NewsApiService {
 
   constructor(private http:HttpClient) { }
   initSources(){
-     return this.http.get('http://localhost:3000/topics/index2');
+     return this.http.get('http://35.231.237.201:3002/topics/index2');
   }
   initArticles(){
-   return this.http.get('http://localhost:3000/newsletters/index2');
+   return this.http.get('http://35.231.237.201:3002/newsletters/index2');
   }
   getArticlesByID(source: String){
    return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key);
