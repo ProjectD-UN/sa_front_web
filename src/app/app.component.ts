@@ -9,19 +9,24 @@ import { NewsApiService } from './news/news-api.service';
 export class AppComponent {
   title = 'saFrontWeb';
   mArticles:Array<any>;
-  mSources:Array<any>;
+  mTopics:Array<any>;
   
+
+  
+
   constructor(private newsapi:NewsApiService){
     console.log('app component constructor called');         
   }
 
   ngOnInit() {
-        //load articles
+      //load articles
       this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
-    //load news sources
-    this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);  
-    }
+      //load news sources
+      this.newsapi.initSources().subscribe(data=> this.mTopics = data['topics']); 
 
+
+    }
+ 
 
   searchArticles(source){
     console.log("selected source is: "+source);

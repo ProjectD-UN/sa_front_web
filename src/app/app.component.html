@@ -1,17 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-navbar></app-navbar>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="80%" alt="Angular Logo" src="http://toxidrogasun.unal.edu.co/images/respuestas.png">
-  <div style="text-align:left">
-    <mat-toolbar color="primary">
-      <button mat-button (click)="sidenav.open ()" ><mat-icon>menu</mat-icon></button>
-      <span>News Headlines</span>  
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+      <img width="80%" alt="Angular Logo" src="http://toxidrogasun.unal.edu.co/images/respuestas.png">
+
+
+    <div style="text-align:left">
+    <mat-toolbar >
+      <button mat-button (click)="sidenav.toggle ()" ><mat-icon>menu</mat-icon></button>
+      <span>Recent newsletters </span>  
       <span class="example-spacer"></span>
       <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
     </mat-toolbar>
+        
     <mat-menu #appMenu="matMenu">
       <button mat-menu-item> Settings </button>
       <button mat-menu-item> Help </button>
@@ -20,18 +23,20 @@
       
       <mat-sidenav #sidenav class="example-sidenav">
         <mat-list class="list-nav">
-            <mat-list-item class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);sidenav.close();">
+            <mat-list-item class="list-item-tittle"> <h2>Topics</h2> </mat-list-item>
+            
+            <mat-list-item class="list-item" *ngFor="let topic of mTopics; let i = index" (click)="searchArticles(source.id);sidenav.close();">
+             
+              <div mat-card-avatar  [ngStyle]="{'background-image': 'url(../assets/images/'+ i +'.png)'}" class="example-header-image"></div>
               
-              <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="example-header-image"></div>
-              
-              <span class="source-name"> {{source.name}}</span>
+              <span class="source-name">  {{topic.name}}</span>
             
             </mat-list-item>
         </mat-list>
       </mat-sidenav>
       <mat-card class="example-card"  *ngFor="let article of mArticles">
-        <mat-card-header>
-          <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+        <mat-card-header >
+          <div mat-card-avatar  [ngStyle]="{'background-image': 'url(../assets/images/'+ i +'.png)'}" class="example-header-image"></div>
           <mat-card-title class="title">{{article.title}}</mat-card-title>
           <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
         </mat-card-header>
