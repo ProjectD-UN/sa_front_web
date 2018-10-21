@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core';
+import { NewsApiService } from './news/news-api.service';
 
 @NgModule({
   imports: [
@@ -31,6 +32,8 @@ import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core
 })
 export class AppComponent {
   title = ' ';
+  mNewsletters:Array<any>;
+  mTopics:Array<any>;
 }
 
 const routes: Routes = [

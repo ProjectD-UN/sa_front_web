@@ -1,0 +1,4 @@
+http://localhost:4200/#
+https://www.smashingmagazine.com/2018/10/news-application-with-angular-and-material-design/
+https://dzone.com/articles/microservice-pattern-api-gateway
+https://www.youtube.com/watch?v=mDoHtD1hI3I&index=3&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ
