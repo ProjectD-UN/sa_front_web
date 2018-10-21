@@ -30,7 +30,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BACO';
+  title = ' ';
 }
 
 const routes: Routes = [
