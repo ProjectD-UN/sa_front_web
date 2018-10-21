@@ -12,7 +12,7 @@ export class NewsApiService {
      return this.http.get('http://localhost:3000/topics/index2');
   }
   initArticles(){
-   return this.http.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='+this.api_key);
+   return this.http.get('http://localhost:3000/newsletters/index2');
   }
   getArticlesByID(source: String){
    return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key);

@@ -8,10 +8,14 @@ import { NewsApiService } from './news/news-api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserSuscribingComponent } from './user-suscribing/user-suscribing.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserSuscribingComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,8 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [NewsApiService],
   bootstrap: [AppComponent]

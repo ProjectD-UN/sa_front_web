@@ -8,7 +8,7 @@ import { NewsApiService } from './news/news-api.service';
 })
 export class AppComponent {
   title = 'saFrontWeb';
-  mArticles:Array<any>;
+  mNewsletters:Array<any>;
   mTopics:Array<any>;
   
 
@@ -20,7 +20,7 @@ export class AppComponent {
 
   ngOnInit() {
       //load articles
-      this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
+      this.newsapi.initArticles().subscribe(data => this.mNewsletters = data['newsletters']);
       //load news sources
       this.newsapi.initSources().subscribe(data=> this.mTopics = data['topics']); 
 
@@ -30,6 +30,6 @@ export class AppComponent {
 
   searchArticles(source){
     console.log("selected source is: "+source);
-    this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
+    this.newsapi.getArticlesByID(source).subscribe(data => this.mNewsletters = data['newsletters']);
   }
 }
