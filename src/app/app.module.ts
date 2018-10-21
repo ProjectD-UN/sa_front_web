@@ -6,6 +6,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,7 +21,11 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDhgYCYgXzNrb6T80q_YsDHSBBlhhAev6w'
+    })
   ],
   providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
