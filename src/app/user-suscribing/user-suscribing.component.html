@@ -1,14 +1,16 @@
-<p>
-  user-suscribing works!
-</p>
+<div class="comp-user-sub" [hidden]="hidden" >
+  <form class="form-container" >
+    <div class="form-title"><h2>Suscribirse</h2></div>
+    <div class="form-title">Nombre</div>
+    <input class="form-field" type="text" [formControl]="name" /><br />
+    <div class="form-title">Email</div>
+    <input class="form-field" type="text" [formControl]="email" /><br />
+    <div class="submit-ok">
+      <p>Suscripcion Exitosa!!   <br> Se te notificara cuando lleguen nuevos boletines :)</p>
+      </div>
+    <div class="submit-container">
+    <input class="submit-button" type="submit" value="Submit" />
+    </div>
+  </form>
+</div>
 
-<form class="form-container">
-  <div class="form-title"><h2>Suscribe</h2></div>
-  <div class="form-title">Name</div>
-  <input class="form-field" type="text" [formControl]="name" /><br />
-  <div class="form-title">Email</div>
-  <input class="form-field" type="text" [formControl]="email" /><br />
-  <div class="submit-container">
-  <input class="submit-button" type="submit" value="Submit" />
-  </div>
-</form>

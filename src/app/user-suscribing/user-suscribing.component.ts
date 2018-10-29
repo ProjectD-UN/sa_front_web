@@ -9,9 +9,14 @@ import { FormControl } from '@angular/forms';
 export class UserSuscribingComponent implements OnInit {
   name = new FormControl('');
   email = new FormControl('');
+  hidden = true;
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+  public toggleHidden(){
+    this.hidden = !this.hidden;
+    console.log('function component toggleHidden called'); 
+  }
 }
