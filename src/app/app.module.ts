@@ -14,14 +14,16 @@ import { FormsModule } from '@angular/forms';
 import { UserSuscribingComponent } from './user-suscribing/user-suscribing.component'; 
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material'; 
  
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { NewsletterComponent } from './newsletter/newsletter.component'; 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     UserSuscribingComponent,
     MapComponent,
-    HomeComponent
+    HomeComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,

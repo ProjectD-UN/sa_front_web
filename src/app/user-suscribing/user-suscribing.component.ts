@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./user-suscribing.component.css']
 })
 export class UserSuscribingComponent implements OnInit {
+  @HostBinding('class.hidden')
   name = new FormControl('');
   email = new FormControl('');
   hidden = true;
@@ -15,7 +16,7 @@ export class UserSuscribingComponent implements OnInit {
 
   ngOnInit() {
   }
-  public toggleHidden(){
+  public toggle(){
     this.hidden = !this.hidden;
     console.log('function component toggleHidden called'); 
   }

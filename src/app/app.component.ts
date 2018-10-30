@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { MapComponent }      from './map/map.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module'
@@ -7,8 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core';
-import { NewsApiService } from './news/news-api.service';
-import { UserSuscribingComponent } from './user-suscribing/user-suscribing.component'; 
 @NgModule({
   imports: [
   AgmMap,
@@ -32,27 +30,17 @@ import { UserSuscribingComponent } from './user-suscribing/user-suscribing.compo
 })
 export class AppComponent {
   title = ' ';
-  mNewsletters:Array<any>;
-  mTopics:Array<any>;
-  @Output() myEvent = new EventEmitter();
-  constructor(private newsapi:NewsApiService){
+  // @Output() myEvent = new EventEmitter();
+  
+  
+
+  constructor(){
     console.log('app component constructor called');         
   }
   
   ngOnInit() {
-      //load articles
-      this.newsapi.initArticles().subscribe(data => this.mNewsletters = data['newsletters']);
-      //load news sources
-      this.newsapi.initSources().subscribe(data=> this.mTopics = data['topics']); 
+  }
 
-      this.toggleHidden2();
-  
-  }
-  public toggleHidden2(){
-    console.log('function component toggleHidden2 called'); 
-    this.myEvent.emit(null)
-    
-  }
   
 
   
