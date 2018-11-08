@@ -7,8 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core';
-import { NewsApiService } from './news/news-api.service';
-
 @NgModule({
   imports: [
   AgmMap,
@@ -32,9 +30,23 @@ import { NewsApiService } from './news/news-api.service';
 })
 export class AppComponent {
   title = ' ';
-  mNewsletters:Array<any>;
-  mTopics:Array<any>;
+  // @Output() myEvent = new EventEmitter();
+  
+  
+
+  constructor(){
+    console.log('app component constructor called');         
+  }
+  
+  ngOnInit() {
+  }
+
+  
+
+  
 }
+
+
 
 const routes: Routes = [
   { path: 'map', component: MapComponent }
