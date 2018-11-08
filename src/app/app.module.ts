@@ -19,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavbarComponent,
-    UserSuscribingComponent
+    UserSuscribingComponent,
     MapComponent,
     HomeComponent
   ],
