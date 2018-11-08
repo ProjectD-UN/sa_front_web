@@ -36,8 +36,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 export class MapComponent implements OnInit {
 	title: string = 'Centros de atención';
+  center: any;
   lng: number = -74.0843007;
   lat: number = 4.6398342;
+  zoom: number = 8;
   centers:Array<any>;
   markers: marker[] = [
     {
@@ -63,12 +65,18 @@ export class MapComponent implements OnInit {
 clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`)
   }
+   onClickMe() {
+    console.log('click')  }
   ngOnInit() {
-    this.centersApi.initCenters().subscribe(data => this.centers = data['data']['allCenters']);
-     
-}
-
+    this.centersApi.initCenters().subscribe(data => this.centers = data['data']['allCenters']);  
   }
+  selectCenter(n: any){
+    this.center = n;  
+    this.lat = n.lat;
+    this.lng = n.lng;
+    this.zoom = 15;
+  }
+}
 
 }
 interface marker {
