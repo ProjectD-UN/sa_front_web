@@ -11,12 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { UserSuscribingComponent } from './user-suscribing/user-suscribing.component';
+import { UserSuscribingComponent } from './user-suscribing/user-suscribing.component'; 
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { NewsletterComponent} from './newsletter/newsletter.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     UserSuscribingComponent,
     MapComponent,
     HomeComponent,
+    NewsletterComponent,
     LoginComponent
   ],
   imports: [
