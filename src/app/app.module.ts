@@ -16,6 +16,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule } from 
 import { MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { NewsletterComponent} from './newsletter/newsletter.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { LoginComponent } from './login/login.component';
     UserSuscribingComponent,
     MapComponent,
     HomeComponent,
-    NewsletterComponent
+    NewsletterComponent,
     LoginComponent
   ],
   imports: [
