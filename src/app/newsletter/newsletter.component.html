@@ -15,13 +15,13 @@
   <mat-sidenav  #sidenav class="example-sidenav" >
     <mat-list class="list-nav" width="400">
         <mat-list-item  class="list-item-tittle"> <h2>Topics</h2> </mat-list-item>
-        <mat-list-item class="list-item" *ngFor="let topic of mTopics; let i = index" (click)="searchArticles(source.id);sidenav.close();">
+        <!-- (click)="searchArticles(source.id);sidenav.close();" -->
+        <mat-list-item  class="list-item" *ngFor="let topic of mTopics; let i = index" >
         
           <div mat-card-avatar  [ngStyle]="{'background-image': 'url(../assets/images/'+ topic.img_id +'.png)'}" class="example-header-image"></div>
           
           <span class="source-name">  {{topic.name}}</span>
-          
-          <button class= "button" style="background: #25282E;background-image: -webkit-linear-gradient(top, #25282E, #5D6473);background-image: -moz-linear-gradient(top, #25282E, #5D6473);background-image: -ms-linear-gradient(top, #25282E, #5D6473);border-color: #5D6473;background-image: -o-linear-gradient(top, #25282E, #5D6473);background-image: linear-gradient(to bottom, #25282E, #5D6473);color: #FFFFFF;font-size: 17px;font-weight: 100;width: 110px;box-shadow: 1px 1px 20px 0px #000000;-webkit-box-shadow: 1px 1px 20px 0px #000000;-moz-box-shadow: 1px 1px 20px 0px #000000;text-shadow: 1px 1px 20px #000000;text-decoration: none;display: inline-block;cursor: pointer;position: absolute; left: 200px;" color="primary" (click)="clickSub()"><mat-icon>beenhere</mat-icon> Suscribe</button>
+          <button class= "button" style="background: #25282E;background-image: -webkit-linear-gradient(top, #25282E, #5D6473);background-image: -moz-linear-gradient(top, #25282E, #5D6473);background-image: -ms-linear-gradient(top, #25282E, #5D6473);border-color: #5D6473;background-image: -o-linear-gradient(top, #25282E, #5D6473);background-image: linear-gradient(to bottom, #25282E, #5D6473);color: #FFFFFF;font-size: 17px;font-weight: 100;width: 110px;box-shadow: 1px 1px 20px 0px #000000;-webkit-box-shadow: 1px 1px 20px 0px #000000;-moz-box-shadow: 1px 1px 20px 0px #000000;text-shadow: 1px 1px 20px #000000;text-decoration: none;display: inline-block;cursor: pointer;position: absolute; left: 200px;" color="primary" (click)="clickSub(topic.name)"><mat-icon>beenhere</mat-icon> Suscribe</button>
           
         </mat-list-item>
     </mat-list>

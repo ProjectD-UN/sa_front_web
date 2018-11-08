@@ -24,10 +24,10 @@ export class NewsletterComponent implements OnInit {
     this.newsapi.initSources().subscribe(data=> this.mTopics = data['topics']); 
   }
 
-  public clickSub(event){
-    console.log('function component toggleHidden2 called'); 
+  public clickSub(event,id: String){
+    console.log('function component toggleHidden2 called',id); 
     this.userSuscribing.toggle();
-    
+    this.userSuscribing.topic_id=id;
   }
 
 }
