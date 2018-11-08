@@ -1,4 +1,4 @@
 export class UserTopic{
-    user_id: String;
-    topic_id: String;
+    user_id: number;
+    topic_id: number;
 }

@@ -26,10 +26,10 @@ export class NewsletterComponent implements OnInit {
 
   }
 
-  public clickSub(event,id: String){
-    console.log('function component toggleHidden2 called',id); 
+  public clickSub(topic: any){
     this.userSuscribing.toggle();
-    this.userSuscribing.topic_id=id;
+    this.userSuscribing.topic_id=topic.id;
+    console.log('Topic id=',this.userSuscribing.topic_id )
   }
 
 }
