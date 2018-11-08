@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
 
 }
