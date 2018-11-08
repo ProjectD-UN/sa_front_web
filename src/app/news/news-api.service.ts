@@ -23,11 +23,8 @@ export class NewsApiService {
   }
   
   postUser(user: User): Observable<User> {
-    // {
-    //   "query": "mutation($user: User!){saveUser(user: $user) {id, name, email}}",
-    //   "variables": { "user":{"email": "abcd@unal.com", "name": "abc" } }
-    // }  
-    return this.http.post<User>('http://35.231.237.201:3002/users',user,{
+    
+    return this.http.post<User>('http://35.231.237.201:3002/graphql{"query": "mutation($user: User!){saveUser(user: $user) {id, name, email}}","variables": { "user":{"email": '+user.email+', "name": '+user.name+' } }} ',user,{
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -36,8 +33,8 @@ export class NewsApiService {
     //   catchError(this.handleError('postUser', user))
     // );
   }
-  postUserTopic(userTopic: UserTopic){
-    return this.http.post<UserTopic>('http://35.231.237.201:3002/users.json',userTopic,{
+  postUserTopic(userTopic: UserTopic): Observable<UserTopic> {
+    return this.http.post<UserTopic>('http://35.231.237.201:3002/user_topics',userTopic,{
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })

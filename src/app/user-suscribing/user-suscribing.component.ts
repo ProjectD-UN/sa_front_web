@@ -16,6 +16,7 @@ export class UserSuscribingComponent implements OnInit {
   @Input() user: User;
   userTopic: UserTopic;
   topic_id: String;
+  userID: number;
   constructor(private newsapi:NewsApiService) { }
 
   ngOnInit() {
@@ -30,22 +31,22 @@ export class UserSuscribingComponent implements OnInit {
       name: this.name.value,
       email: this.email.value
     };
-    console.log(this.user);
-    this.newsapi.postUser(this.user).subscribe(
-      (data: User) => {
+    
+    this.newsapi.postUser(this.user).subscribe(data => this.userID = data['id']);
+
+    this.userTopic={
+      user_id: this.userID,
+      topic_id: 2
+    }
+    console.log(this.user,this.userTopic);
+    
+
+    this.newsapi.postUserTopic(this.userTopic).subscribe(
+      (data: UserTopic) => {
         console.log(data);
-        this.name.reset();
-        this.email.reset();
       },
       (error: any) => console.log(error)
     );
-
-    // this.newsapi.postUserTopic(this.userTopic).subscribe(
-    //   (data: UserTopic) => {
-    //     console.log(data);
-    //   },
-    //   (error: any) => console.log(error)
-    // );
     
     
   }
