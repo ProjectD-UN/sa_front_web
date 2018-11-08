@@ -19,9 +19,11 @@ export class NewsletterComponent implements OnInit {
 
   ngOnInit() {
     //load articles
-    this.newsapi.initArticles().subscribe(data => this.mNewsletters = data['newsletters']);
+    this.newsapi.initArticles().subscribe(data => this.mNewsletters = data['data']['allNewsletters']);
+    //this.newsapi.initArticles().subscribe(Mydata => this.mNewsletters = Mydata['newsletters'],);
     //load news sources
-    this.newsapi.initSources().subscribe(data=> this.mTopics = data['topics']); 
+    this.newsapi.initSources().subscribe(data=> this.mTopics = data['data']['allTopics']); 
+
   }
 
   public clickSub(event,id: String){
