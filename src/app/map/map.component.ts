@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core';
 import { MapService } from './map.service';
@@ -60,10 +60,20 @@ export class MapComponent implements OnInit {
     }
   ]
   constructor(private centersApi:MapService) { }
+clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${label || index}`)
+  }
+  ngOnInit() {
+    this.centersApi.initCenters().subscribe(data => this.centers = data['data']['allCenters']);
+     
+}
 
-  ngOnInit(entersApi:MapService) {
-    this.centersApi.initCenters().subscribe(data => this.centers = data['allCenters']);
-    console.info(this.centers);
   }
 
+}
+interface marker {
+  lat: number;
+  lng: number;
+  label?: string;
+  draggable: boolean;
 }
