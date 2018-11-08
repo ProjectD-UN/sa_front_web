@@ -1,13 +1,14 @@
 <H1 class="text-center">{{title}}</H1>
 <br>
-<!--
-<div class="row">
-<input class="form-control" type="text"/>
-<button class="btn btn-primary">Buscar</button>
-</div>
--->
+
+
 <div class="row">
   <div class="col-md-12">
+    <div class="row" style="display: flex;flex-direction: row">
+<input class="form-control col-sm-8 col-md-6" type="text" style="width: 60%; margin-left: 20px" />
+<button class="btn btn-primary " style="margin-left: 20px">Buscar</button>
+</div>
+<br>
     <div class="col-md-4 float-left text-center" style="display:flex;flex-direction: column; margin-left: 20px">
     <div class="row" 
           *ngFor="let m of centers; let i = index"
