@@ -68,17 +68,16 @@ clickedMarker(label: string, index: number) {
    onClickMe() {
     console.log('click')  }
   ngOnInit() {
-    this.centersApi.initCenters().subscribe(data => this.centers = data['data']['allCenters']);  
+    this.centersApi.initCenters().subscribe(data => this.centers = data['data']['allCenters']);
   }
   selectCenter(n: any){
-    this.center = n;  
+    this.center = n;
     this.lat = n.lat;
     this.lng = n.lng;
     this.zoom = 15;
   }
 }
 
-}
 interface marker {
   lat: number;
   lng: number;
