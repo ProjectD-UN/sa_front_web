@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule, GoogleMapsAPIWrapper ,AgmMap, AgmMarker} from '@agm/core';
-
+import { MapService } from './map.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef , NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   	AgmMarker,
   	AgmMap,
     BrowserModule,
+    HttpClientModule,
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
@@ -36,6 +38,7 @@ export class MapComponent implements OnInit {
 	title: string = 'Centros de atención';
   lng: number = -74.0843007;
   lat: number = 4.6398342;
+  centers:Array<any>;
   markers: marker[] = [
     {
       lat: 51.673858,
@@ -56,9 +59,11 @@ export class MapComponent implements OnInit {
       draggable: true
     }
   ]
-  constructor() { }
+  constructor(private centersApi:MapService) { }
 
-  ngOnInit() {
+  ngOnInit(entersApi:MapService) {
+    this.centersApi.initCenters().subscribe(data => this.centers = data['allCenters']);
+    console.info(this.centers);
   }
 
 }
