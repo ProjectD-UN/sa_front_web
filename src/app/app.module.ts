@@ -17,6 +17,7 @@ import { MatIconModule, MatSidenavModule, MatListModule } from '@angular/materia
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { NewsletterComponent} from './newsletter/newsletter.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { NewsletterComponent} from './newsletter/newsletter.component'
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
