@@ -1,4 +1,54 @@
-<H1>{{title}}</H1>
-<agm-map [latitude]="lat" [longitude]="lng">
+<H1 class="text-center">{{title}}</H1>
+<br>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="row" style="display: flex;flex-direction: row">
+<input class="form-control col-sm-8 col-md-6" type="text" style="width: 60%; margin-left: 20px" />
+<button class="btn btn-primary " style="margin-left: 20px">Buscar</button>
+</div>
+<br>
+    <div class="col-md-4 float-left text-center" style="display:flex;flex-direction: column; margin-left: 20px">
+    <div class="row" 
+          *ngFor="let m of centers; let i = index"
+          >
+          <button (click)="selectCenter(m)" class="btn btn-primary">
+          {{i}}.{{m.name}}</button>
+    </div>
+  </div>
+  <div class="col-md-6 float-right" style="display:flex;flex-direction: column;">
+    <div class="card text-white bg-info mb-3" >
+      <div class="card-header"><h3>{{center.name}}</h3></div>
+      <div class="card-body">
+        <h5 class="card-title">Ciudad</h5>
+        <p class="card-text">{{center.city}}</p>
+
+        <h5 class="card-title">Dirección</h5>
+        <p class="card-text">{{center.address}}</p>
+
+        
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+<br>
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-marker 
+      *ngFor="let m of centers; let i = index"
+      (markerClick)="clickedMarker(m.name, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.name"
+      >
+      
+    <agm-info-window>
+      <strong>"m.address"</strong>
+    </agm-info-window>
+    
+  </agm-marker>
 </agm-map>
