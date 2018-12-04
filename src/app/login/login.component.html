@@ -34,12 +34,12 @@
         </span>
 
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
-          <input class="input100" type="text" name="username" placeholder="Username">
+          <input class="input100" type="text" [(ngModel)]="username" name="username" placeholder="Username">
           
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Enter password">
-          <input class="input100" type="password" name="pass" placeholder="Password">
+          <input class="input100" type="password" [(ngModel)]="pass" name="pass" placeholder="Password">
           
         </div>
 
@@ -51,7 +51,7 @@
         </div>
 
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
+          <button (click)="dologin()" class="login100-form-btn">
             Iniciar sesión
           </button>
         </div>

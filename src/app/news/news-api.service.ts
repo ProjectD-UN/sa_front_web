@@ -12,11 +12,11 @@ export class NewsApiService {
 
   constructor(private http:HttpClient) { }
   initSources(){
-    return this.http.get('http://35.196.126.118:5000/graphql?query={allTopics{name,img_id}}');
+    return this.http.get('http://35.231.237.201:5000/graphql?query={allTopics{name,img_id}}');
   }
   initArticles(){
     //return this.http.get('http://35.231.237.201:3002/newsletters/index2');
-    return this.http.get('http://35.196.126.118:5000/graphql?query={allNewsletters{title,description,url_to_image,topics{name,img_id}}}');
+    return this.http.get('http://35.231.237.201:5000/graphql?query={allNewsletters{title,description,url_to_image,topics{name,img_id}}}');
   }
   getArticlesByID(source: String){
    return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key);
