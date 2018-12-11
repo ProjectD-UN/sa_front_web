@@ -13,10 +13,25 @@ export class LoginComponent implements OnInit {
   username:String;
   pass:String;
   thelogin:any;
+  data:any;
   constructor(private loginservice:LoginService) { }
 
   dologin(){
-    this.loginservice.dologin(this.username,this.pass).subscribe(data => this.loginservice = data['data']);
+    console.log(this.username , this.pass);
+    this.loginservice.dologin(this.username,this.pass).subscribe(data => 
+      {
+        console.log(data);
+        if(data.data.loginUser.auth){
+          alert("Has iniciado sesion exitosamente!")
+        }
+        if(!data.data.loginUser.auth){
+          alert(data.data.loginUser.message)
+        }
+        this.data = data['data']
+      }
+      
+      );
+    console.log("dd ",this.data);
   }
   ngOnInit() {
     
