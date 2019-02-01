@@ -15,7 +15,7 @@ export class UserSuscribingComponent implements OnInit {
   hidden = true;
   @Input() user: User;
   userTopic: UserTopic;
-  topic_id: String;
+  topic_id: number;
   userID: number;
   constructor(private newsapi:NewsApiService) { }
 
