@@ -26,9 +26,9 @@ export class NewsletterComponent implements OnInit {
 
   }
 
-  public clickSub(topic: any){
+  public clickSub(topic: number){
     this.userSuscribing.toggle();
-    this.userSuscribing.topic_id=topic.id;
+    this.userSuscribing.topic_id=topic;
     console.log('Topic id=',this.userSuscribing.topic_id )
   }
 
