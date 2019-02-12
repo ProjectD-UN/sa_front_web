@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    image: menoguera/sa-front-web
+    command: 'npm start'
+    ports:
+      - '4200:4200'
+      - '49153:49153'
+    expose:
+      - '4200'
+      - '49153'
