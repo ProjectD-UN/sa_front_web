@@ -11,7 +11,7 @@ export class MapService {
   
   constructor(private  httpClient:  HttpClient) {}
 	initCenters(){
-		var data = this.httpClient.get('http://35.196.126.118:5000/graphql?query={allCenters{name,address,city,lat,lng}}');
-   		return  this.httpClient.get('http://35.196.126.118:5000/graphql?query={allCenters{name,address,city,lat,lng}}');
+		var data = this.httpClient.get('http://34.73.103.246/graphql?query={allCenters{name,address,city,lat,lng}}');
+   		return  this.httpClient.get('http://34.73.103.246/graphql?query={allCenters{name,address,city,lat,lng}}');
   	}
 }

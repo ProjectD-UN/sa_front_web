@@ -10,7 +10,7 @@ export class LoginService {
   constructor(private  http:  HttpClient) {}
 	dologin(username:String, pass:String ): Observable<any>{ 
 		
-       return  this.http.post<any>('http://35.196.42.82/graphql',
+       return  this.http.post<any>('http://34.73.103.246/graphql',
        {
         "query": "mutation($login: Login){loginUser(login: $login) {auth,...on Token{token, expiresIn},...on FailedToken{message}}}",
         "variables": { "login":{"email":username, "password": pass}}
